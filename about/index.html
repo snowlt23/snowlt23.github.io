@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>About</title>
+	
+	<meta name="description" content="">
+	<meta name="image" content="">
+	
+	<meta itemprop="name" content="About">
+	<meta itemprop="description" content="">
+	<meta itemprop="image" content="">
+	
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="About">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:site" content="@snowlt23">
+	<meta name="twitter:creator" content="@snowlt23">
+	<meta name="twitter:image:src" content="">
+	
+	
+	<meta name="og:title" content="About">
+	<meta name="og:description" content="">
+	
+	<meta name="og:url" content="https://snowlt23.github.io/about/">
+	<meta name="og:site_name" content="About">
+	<meta name="og:type" content="article">
+	
+	<meta name="article:author" content="snowlt23">
+	<meta name="article:tag" content="">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script src="/js/caption.js"></script>
+</head>
+
+<body>
+	
+
+
+
+<header >
+	<a href="/" style="float: left;color:#777;"><strong>snowlt23&#39;s website</strong></a>
+	<a href="https://snowlt23.github.io/about/" style="color:#777;"><strong>About</strong></a>
+
+
+</header>
+
+
+<div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;"></div>
+<script>
+function fadeOut(el) {
+  el.style.opacity = 1;
+
+  var last = +new Date();
+  var tick = function() {
+    el.style.opacity = +el.style.opacity - (new Date() - last) / 80;
+    last = +new Date();
+    
+
+    if (el.style.opacity > 0) {
+      (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+    } else {
+    	el.style.display='none';
+    }
+  };
+
+  tick();
+}
+
+function ready(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+         el = document.getElementById('loadingMask');
+         fadeOut(el);
+        var elements = document.querySelectorAll("img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("alt")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("alt"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
+window.onload = ready;
+</script>
+
+<div class="content">
+	<h1>About <aside></aside></h1>
+	
+
+<h2 id="snowlt23-shunsuke-ogata">snowlt23 (Shunsuke Ogata)</h2>
+
+<ul>
+<li>プログラマ</li>
+<li>N高等学校生徒</li>
+<li>2016年度N予備校ドワンゴインターン生</li>
+<li>Superconputing Contest 2017 4位</li>
+</ul>
+
+<h2 id="skills">Skills</h2>
+
+<ul>
+<li>プログラミング言語
+
+<ul>
+<li>Nim</li>
+<li>C</li>
+<li>JavaScript</li>
+</ul></li>
+<li>言語処理系</li>
+<li>低レイヤー</li>
+<li>最適化</li>
+<li>WASM</li>
+</ul>
+
+<h1 id="products">Products</h1>
+
+<ul>
+<li><a href="https://github.com/snowlt23/twim">Twim</a> (Twitter Image Downloader Chrome拡張(WASM))</li>
+<li><a href="https://github.com/snowlt23/nimpeheader">nim-peheader</a> (PEヘッダパーサ)</li>
+<li><a href="https://github.com/snowlt23/wasm-bench-site">wasm-bench-site</a> (WASMベンチマークサイト)</li>
+</ul>
+
+<h2 id="socials">Socials</h2>
+
+<ul>
+<li>Github: <a href="https://github.com/snowlt23">https://github.com/snowlt23</a></li>
+<li>Twitter: <a href="https://twitter.com/snowlt23">https://twitter.com/snowlt23</a></li>
+<li>Qiita: <a href="https://qiita.com/snowlt23">https://qiita.com/snowlt23</a></li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
