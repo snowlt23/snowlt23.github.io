@@ -116,7 +116,7 @@ window.onload = ready;
 
 <p>Forthがどんな見た目をしていて、どんな動作をするのかが他のプログラミング言語をやってきた人にはわかりやすいはずなので、まずはForthの動作を見ていこうと思う。</p>
 
-<p>Forthで<code>1 + 1</code>をするプログラムは以下だ。</p>
+<p>Forthで<code>4 + 5</code>をするプログラムは以下だ。~~</p>
 
 <pre><code>4 5 +
 </code></pre>
@@ -310,6 +310,10 @@ Forthは面白い言語なので言語自体のHackな記事とかも書いて�
 <p>Forthでは<code>:</code>wordでcompilation stateというものに入ります。コンパイル状態ということですね。反対に<code>;</code>でcompilation stateから抜けます。<br />
 このcompilation stateでのword呼び出しは、そのwordを呼び出す機械語コードやVMコードに変換されます。しかし、このwordがimmediate wordであった場合、呼び出しコードに変換する代わりにその場でwordを実行します。こうすることでword定義の中でwordの実行が可能になります。<br />
 C言語など多くの言語では、ソースコードをコンパイル-&gt;リンク-&gt;実行ファイル-&gt;実行という流れをとることが多いですが、Forthではword1つ1つを呼び出すたびにコードの生成が行われ、実行が可能になります。ある意味ではJITコンパイラとも呼ぶことができますね。</p>
+
+<h2 id="さらに追記">さらに追記</h2>
+
+<p><code>4 + 5</code>がなぜか<code>1 + 1</code>になっていました。多分<code>1 1 +</code>を<code>4 5 +</code>に変更してそこだけ修正忘れてたんだと思います。頭がついていない。</p>
 
 </div>
 
