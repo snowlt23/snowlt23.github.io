@@ -1,0 +1,130 @@
+<html><head><meta charset='utf-8'><title>supercon2017参加記 - Floral Flori</title><style>
+body {
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+#pjax-main {
+    margin: 40px;
+}
+
+.header {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-left: solid 5px #5d627b;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.22);
+    padding-right: 18px;
+    margin-top: 20px;
+}
+.header > li:first-child {
+    font-family: cursive;
+    font-size: 24px;
+    margin-right: auto;
+}
+.header > li:first-child > a {
+    color: black;
+    text-decoration: none;
+}
+.header > li {
+    margin: 5px;
+    font-size: 18px;
+}
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+.post {
+    margin: 16px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    border-left: solid 5px #5d627b;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
+a {
+    color: #4183C4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+}
+h1 {
+    font-size: 28px;
+    color: black; }
+
+h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #cccccc;
+    color: black;
+}
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+</style></head><body><ul class='header'><li><a href='/'>Floral Flori</a></li><li><a href='/about.html'>About</a></li><li><a href='/posts.html'>Posts</a></li></ul><div id='pjax-main'><p>この記事は <a href='https://qiita.com/advent-calendar/2017/n-highschool'>N高等学校 Advent Calendar 2017</a> 24日目のポエムです。
+</p><p>今更ですが今年の8月頃に開催されたSupercomputing Contest 2017(SuperCon)に参加した記録でも書こうと思います。  
+  本当はFloriという自作言語の記事を書きたかったのですが処理系の実装が目標の段階まで到達できなかったので代わりにこちらを。
+</p><section><h2>SuperConとは</h2><p><a href='http://www.gsic.titech.ac.jp/supercon/main/attwiki/index.php'>http://www.gsic.titech.ac.jp/supercon/main/attwiki/index.php</a>
+</p><p>東京工業大学と大阪大学が主催するスーパーコンピューターを使っていい感じに問題を解くコンテストです。５日間(実質4日)かけて解くのでいわゆるマラソン？
+</p></section><section><h2>事の発端</h2><p>唐突にSuperCon出ない？とプロたちから誘われる。この時点では競技プログラミング自体は全くの門外漢だったのでどうしようかと戸惑いながらも面白そうなので出てみることにした。ちなみに後でなぜ誘ったのか聞いたらN高等学校学内Slackの#programmingチャンネル見てたら強そうだからという雑な理由だった。</p></section><section><h2>予選</h2><p>SuperConの予選はクセ無し種合成問題というものだった。競技プログラミングの門外漢でアルゴリズムに弱い僕はなんか適当な全探索みたいなのを書いて終わった気がする。  
+  なおチームメイトのプロがビームサーチとか使ってめっちゃいい感じのコードを生成してくれたことにより予選を突破できた。:pray:
+</p></section><section><h2>本戦前</h2><p>地方勢なので東京まで飛行機で行った。なお東京自体はそこそこ慣れてたので特に問題はなかった。  
+  前日に学校のプログラミング勢+講師で競プロ合宿をした。なお僕は飛行機の関係上途中参加。  
+  本戦の前日の深夜に大阪大学関係で検索したらなんかめっちゃいい感じのSX-ACEの資料が出てきたので慌てて重要そうなところをメモる(SX-ACEはSuperCon2017で使うスパコン)
+</p></section><section><h1>本戦 (ここからがメイン))</h1></section><section><h2>本戦問題</h2><p>本戦の問題は音楽データの圧縮をする問題だった。圧縮といっても色々な圧縮アルゴリズムで片っ端から小さくしろという問題ではなく、PCMデータを音の定数分の上下で表す非可逆圧縮をするという問題。今回求めなくてはならないのはより元の音源を再現できる定数と上下の配列。  
+  で、その圧縮の際に利用するのが大阪大学に導入されているスーパーコンピュータであるSX-ACE。SX-ACEはベクトル型計算機というもので、ざっくりいうと配列に対して同じような処理を複数回適用する際にベクトル化していい感じに高速に計算できる。今回のコンテストはスパコンがメインのコンテストなので、これを有効活用しないといけない。
+</p></section><section><h1>本戦開始</h1></section><section><h2>1日目)</h2><p>とりあえず３人でそれぞれ別な感じの方針でいくことに。この時僕は何を書いたかあまり覚えていない（なんかその時点ではそこそこスコア出てたけどすぐにプロに抜かれて完全に忘却の彼方へいってしまった）</p></section><section><h2>2日目)</h2><p>プロが三分探索とかを使ってめっちゃいい感じのスコアを出す。ここからこれを改良していく方針になる。</p><p>これを改良していって特にすることがなくなっていた。わりと３人共暇（２人はもとから暇）になってくる。  
+  この時点でプロがDP解を思いついたらしいが実装がやばいらしく一旦保留。
+</p></section><section><h2>3日目)</h2><p>プロが気合でDP解の実装をする。なんかめっちゃやばいスコアが出て３人で笑ってた。しかしこの時点で大きな問題があって、DPでも計算量がめちゃめちゃ重くてすごい小さな音楽データでないと時間内に計算しおわらない。  
+  そこで僕はプロが実装したDP解の高速化に取り掛かった。ようやくまともな仕事をすることになる。
+</p><p>ここでさらに問題発生。プロが実装したDPにバグがあることが発覚。プロは気合でデバッグを開始。</p></section><section><h2>高速化の話 (申し訳程度の技術情報))</h2><p>そして僕の高速化はめちゃめちゃ上手く行った。なんかぽんぽんと速度が見違えるように速くなってそこそこ小さめの問題なら解ける程度の速度まで持っていけた。普段はC Rust Nimみたいなシステムプログラミング言語とかばかり触っているおかげだろうか。
+</p><p>ちなみにここでした最適化は、主にメモリレイアウトへのアクセスの調整とベクトル化の２つ。  
+
+  メモリは基本的にCPUに比べると遅いハードなのでメモリからCPUのキャッシュへ上手く載せることが重要になる。で、メモリからキャッシュに載せる際にメモリからは必要なデータだけでなくその周辺のデータもキャッシュへ読み込まれる。なので、連続でアクセスするデータがメモリとして連続しているとメモリアクセスが超高速化されてハッピーということだ。  
+  具体的には、
+</p><pre><code>int arr[100][1000];</code></pre><p>という配列が合った時に、</p><pre><code>for (int j=0; j<1000; j++) {
+  for (int i=0; i<100; i++) {
+    process(arr[i][j]);
+  }
+}</code></pre><p>とするよりも、</p><pre><code>for (int i=0; i<100; i++) {
+  for (int j=0; j<1000; j++) {
+    process(arr[i][j]);
+  }
+}</code></pre><p>としたほうが高速になるという具合だ。こうすることにより連続したメモリ領域へのアクセスとなり、メモリアクセスの際に上手くキャッシュに載りかなり高速化される。  
+  ちなみにこれはC言語の例で、Fortranとかではメモリレイアウトが逆になるらしいので注意。
+</p><p>もうひとつの最適化は今回使用したスパコンのSX-ACE特有の話だが、結構面白い。上記で説明したベクトル化だが、基本的にSX-ACE用のコンパイラが自動でベクトル化をしてくれる。だが、複雑なプログラムになるとコンパイラが依存関係を上手く推論してくれず、本来はベクトル化していいところでベクトル化がされないということがありえる。そこで、この依存関係を強制的に無しとする拡張pragmaが用意されている。これを使うことによって実質的に強制的にベクトル化を指示することができる。(ただし、本来コンパイラが推論できないのに強制でベクトル化させるものなので諸刃の剣である)  
+  今回のスパコンであるSX-ACEのCコンパイラでは #pragma vdir nodep みたいな感じのpragmaだった。
+</p><p>上記の最適化を適用することによって結構速くなった。</p></section><section><h2>4日目)</h2><p>4日目は提出に向けての最終調整を行った。というのも、SuperCon自体は５日間だが、最終プログラムの提出が4日目の昼ということになっている。  
+  この４日目はかなり時間が足りなくて、かなりギリギリの中で作業していたと思う。
+</p><p>提出が終わった後はスパコン見学とかがあった。しかし今回自分達は東京会場である東京工業大学での参加だったので、大阪大学のSX-ACEではなく東工大のTSUBAMEを見てきた。めっちゃすごかった(小学生並の語彙力)
+</p><p>なおこのあとは３人でカラオケに行ったりした。楽しかった(小学生並の語彙力)
+</p></section><section><h2>5日目)</h2><p>いよいよ表彰式。最終的にかなり時間が足りなかったので、事故が起こらないことをひたすら祈っていた。  
+  ちなみに結果は祈り虚しく事故って4位。事故らなかったらおそらく2位だった。とてもつらい。
+</p><p>ちなみに作問者の先生いわく今回の問題はデータサイズが大きく、DPは計算量とメモリ使用量ともに大きくなるであろうとのことだった。意図的にそういう問題にしたらしい。</p><p>この後は懇親会とかがあった。懇親会で思い切って東工大の先生に話しかけにいって、コンパイラの話をしたりした（僕自身は競プロerではなく言語処理系勢なので）。そこでびっくりしたのが、大阪会場にKyoto Common Lispで有名な荻谷先生がおられるとのこと。これを聞いたときはまじで叫んだ（最高神じゃん）。東京会場だったのでお話できなかったのが悔やまれる。（なお東工大の先生やチューターの方とコンパイラの話をひたすらしてめっちゃ楽しかった(地方勢なのでこういった話をリアルでできるのはめったにない)）
+</p></section><section><h1>SuperCon終わり</h1><p>とても楽しかった。しかしとても悔いが残る結果となってしまった。  
+  以下ができていればなぁというお気持ち。  
+
+  - 競プロ力不足 (圧倒的にアルゴリズム力不足だった)
+</p><p>- 最終的なプログラムより倍高速化 (あと倍高速化していればDP解でも全ての問題が解けたはずで、そうなると最終問題のTLEによる事故も無く、かつ１位になってたはず)
+</p><p>ちなみにこの後パソコン甲子園が開催される予定があり、参加予定だった僕は今回のSuperConで悔しかったのでめっちゃ競プロ猛勉強をした。（なお結果）</p></section><section><h1>総括</h1><p>競技プログラミングが強くなりたいと思った。  
+  来年もSuperConがあるはずなのでそれまでに圧倒的精進をしたい。（それに来年のSuperConはおそらく僕の大好きなGPU型スパコンのTSUBAMEのはずなので）  
+  めっちゃいい経験ができたと思う。チームに誘ってくれた２人に圧倒的感謝。:pray:
+</p></section></div><div class='footer'>powered by&nbsp;<strong>Flori</strong>.</div><script src='/pjax.js'></script></body></html>

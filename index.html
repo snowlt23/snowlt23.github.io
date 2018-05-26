@@ -1,244 +1,84 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>snowlt23の雑記</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<html><head><meta charset='utf-8'><title>posts - Floral Flori</title><style>
+body {
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+#pjax-main {
+    margin: 40px;
+}
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+.header {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-left: solid 5px #5d627b;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.22);
+    padding-right: 18px;
+    margin-top: 20px;
+}
+.header > li:first-child {
+    font-family: cursive;
+    font-size: 24px;
+    margin-right: auto;
+}
+.header > li:first-child > a {
+    color: black;
+    text-decoration: none;
+}
+.header > li {
+    margin: 5px;
+    font-size: 18px;
+}
+.footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+.post {
+    margin: 16px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    border-left: solid 5px #5d627b;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+a {
+    color: #4183C4;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+}
+h1 {
+    font-size: 28px;
+    color: black; }
 
-<meta name="author" content="snowlt23" />
-  <meta name="keywords" content="programming, compiler, vr, プログラミング, 言語処理系, コンパイラ" />
+h2 {
+    font-size: 24px;
+    border-bottom: 1px solid #cccccc;
+    color: black;
+}
 
-
-
-
-
-
-<meta name="generator" content="Hugo 0.36.1" />
-
-
-<link rel="canonical" href="https://snowlt23.github.io/" />
-<link href="https://snowlt23.github.io/index.xml" rel="alternate" type="application/rss+xml" title="snowlt23の雑記" />
-  <link href="https://snowlt23.github.io/index.xml" rel="feed" type="application/rss+xml" title="snowlt23の雑記" />
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-
-
-
-
-<link href="/dist/even.min.css?v=3.0.1" rel="stylesheet">
-
-
-
-
-
-<meta property="og:title" content="snowlt23の雑記" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://snowlt23.github.io/" />
-
-
-
-<meta property="og:updated_time" content="2018-01-29T23:19:05&#43;09:00"/>
-
-
-
-
-
-
-
-
-
-
-<meta itemprop="name" content="snowlt23の雑記">
-<meta itemprop="description" content="">
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="snowlt23の雑記"/>
-<meta name="twitter:description" content=""/>
-
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
-
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
-</head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">snowlt23の雑記</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a>
-  </ul>
-</nav>
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">snowlt23の雑記</a>
-</div>
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li>
-  </ul>
-</nav>
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          
-  <section id="posts" class="posts">
-    
-    
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/forth-awakening/">Forthの覚醒 : road to jedi ;</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2018-01-29 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1/30 Forthの動作について追記 1/31 Forthの辞書についての文言を修正・追記 1/31 1+1を4+5に修正(本当に頭がついていない) 思いつくままに書い
-    </div>
-    <div class="read-more">
-      <a href="/post/forth-awakening/" class="read-more-link"></a>
-    </div>
-  </div>
-</article>
-
-    
-      <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/supercon2017/">Supercon2017参加記</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-12-24 </span>
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      この記事は N高等学校 Advent Calendar 2017 24日目のポエムです。 今更ですが今年の8月頃に開催されたSupercomputing Contest 2017(SuperCon)
-    </div>
-    <div class="read-more">
-      <a href="/post/supercon2017/" class="read-more-link"></a>
-    </div>
-  </div>
-</article>
-
-    
-  </section>
-  
-  <nav class="pagination">
-    
-    
-  </nav>
-
-        </div>
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="https://twitter.com/snowlt23" class="iconfont icon-twitter" title="twitter"></a>
-      <a href="https://github.com/snowlt23" class="iconfont icon-github" title="github"></a>
-  <a href="https://snowlt23.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    %!(EXTRA string=<a class="hexo-link" href="https://gohugo.io">Hugo</a>)
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-     - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    
-      2017 - 
-    2018
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">snowlt23</span>
-  </span>
-</div>
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
-  </div>
-  
-<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  
-<script type="text/javascript" src="/dist/even.min.js?v=3.0.1"></script>
-
-
-
-
-
-
-
-
-</body>
-</html>
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+</style></head><body><ul class='header'><li><a href='/'>Floral Flori</a></li><li><a href='/about.html'>About</a></li><li><a href='/posts.html'>Posts</a></li></ul><div id='pjax-main'><div class='post'><h2><a href='/floridraft.html'>自作言語Floriについての草案</a></h2><div>自作言語Floriの現時点での仕様&TODO
+</div></div><div class='post'><h2><a href='/supercon2017.html'>supercon2017参加記</a></h2><div>Supercomputing Contest 2017参加記
+</div></div><div class='post'><h2><a href='/about.html'>About</a></h2><div>このサイトについて</div></div></div><div class='footer'>powered by&nbsp;<strong>Flori</strong>.</div><script src='/pjax.js'></script></body></html>
