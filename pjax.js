@@ -456,7 +456,7 @@ pjax_cachestore[pjax_url] = pjax_resp;
 pjax_callback(pjax_url);
 }
 function pjax_store_urlGG_core_prelude_CString_pjax_Fn(pjax_url, pjax_callback) {
-if (!($1[$2](pjax_cachestore, pjax_url))) {
+if (!(pjax_cachestore[pjax_url])) {
 var pjax_xhr = new XMLHttpRequest();
 pjax_xhr["url"] = pjax_url;
 pjax_xhr["callback"] = pjax_callback;
@@ -481,7 +481,7 @@ return (core_pointer_p + core_pointer_i);
 function core_pointer_unrefGjscore_ElementG_core_pointer_Ptr_jscore_Element(core_pointer_p) {
 }
 function pjax_pjax_hookGG_jscore_Element(pjax_dom) {
-var pjax_targets = pjax_dom.getElementsByTagname("a");
+var pjax_targets = pjax_dom.getElementsByTagName("a");
 {
 var pjax_i = core_syntax_rangeGG_core_prelude_Int_core_prelude_Int(0, (pjax_targets.length - 1)).s;
 while ((pjax_i <= core_syntax_rangeGG_core_prelude_Int_core_prelude_Int(0, (pjax_targets.length - 1)).e)) {
@@ -501,8 +501,8 @@ pjax_targets[pjax_i].addEventListener("click", pjax_target_click_fn);
 }
 function pjax_reload_pageGG_core_prelude_CString(pjax_url) {
 var pjax_linkdom = pjax_cachestore[pjax_url];
-var pjax_linktitledom = pjax_linkdom.getElementsByTagname("title")[0];
-var pjax_linkmaindom = pjax_linkdom.getElementsById("pjax-main");
+var pjax_linktitledom = pjax_linkdom.getElementsByTagName("title")[0];
+var pjax_linkmaindom = pjax_linkdom.getElementById("pjax-main");
 var pjax_origtitledom = document.getElementsByTagName("title")[0];
 var pjax_origmaindom = document.getElementById("pjax-main");
 pjax_origtitledom.innerHTML = pjax_linktitledom.innerHTML;
